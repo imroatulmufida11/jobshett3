@@ -37,8 +37,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Identitas</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+        .card {
+            background-color: white;
+            margin: auto;
+            width: 300px;
+            border-radius: 25px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            padding: 25px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .tombol {
+            width: 200px;
+            margin-top: 20px;
+            padding: 5px;
+            border-radius: 8px;
+            background-color: red;
+            color: white;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+        input{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
+    <div class="card">
     <h2>Form Identitas</h2>
     
     <?php if (!empty($errors)): ?>
@@ -50,13 +81,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php endif; ?>
     
     <form method="post" action="identitas.php">
-        <label for="nama">Nama:</label>
+        <label for="nama">Nama:</label><br>
         <input type="text" name="nama" required><br>
 
-        <label for="no_telp">Nomor Telepon:</label>
-        <input type="text" name="no_telp" required><br>
+        <label for="no_telp">Nomor Telepon:</label><br>
+        <input type="tel" name="no_telp" required><br>
 
-        <input type="submit" value="Lanjutkan ke Pembelian Produk">
+        <input class="tombol" type="submit" value="Lanjutkan ke Pembelian Produk">
     </form>
+    </div>
+    
 </body>
 </html>
